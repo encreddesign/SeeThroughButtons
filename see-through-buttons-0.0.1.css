@@ -1,0 +1,85 @@
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+/*
+* Developer: JoshuaGrierson
+* Font: Copywright Google Fonts - https://www.google.com/fonts
+* Project Name: See Through ButtonShadow
+* Version: 0.0.1
+* NOTE: Buttons only support IE10 and up
+*/
+body{
+	background-color:#56ABD6;
+}
+.stb,
+button[style="stb"],
+input[style="stb"][type="button"],
+input[style="stb"][type="reset"],
+input[style="stb"][type="submit"]{
+	width:auto;
+	height:auto;
+	padding:0.5em;
+	text-align:center;
+	outline:none;
+	max-width:200px;
+	margin-right:auto;
+	margin-left:auto;
+	display:inherit;
+}
+.stb[text]:before,
+button[style="stb"][text]:before,
+input[style="stb"][value][type="button"],
+input[style="stb"][value][type="reset"],
+input[style="stb"][value][type="submit"]{
+	content: attr(text);
+	font-family:'Pacifico', cursive;
+}
+.stb[text],
+button[style="stb"][text],
+input[style="stb"][value][type="button"],
+input[style="stb"][value][type="reset"],
+input[style="stb"][value][type="submit"]
+{
+	-webkit-transition:border-color 0.1s ease, background-color 0.1s ease;
+	-moz-transition:border-color 0.1s ease, background-color 0.1s ease;
+	-o-transition:border-color 0.1s ease, background-color 0.1s ease;
+	transition:border-color 0.1s ease, background-color 0.1s ease;
+	border:0.2em solid;
+}
+.stb[text]:hover,
+button[style="stb"][text]:hover,
+input[style="stb"][value][type="button"]:hover,
+input[style="stb"][value][type="reset"]:hover,
+input[style="stb"][value][type="submit"]:hover{
+	cursor:pointer;
+	background-color:inherit;
+}
+.stb[text]:active,
+button[style="stb"][text]:active,
+input[style="stb"][value][type="button"]:active,
+input[style="stb"][value][type="reset"]:active,
+input[style="stb"][value][type="submit"]:active{
+	border-color:#fff;
+}
+.stb.theme,
+button[style="stb"].theme,
+input[style="stb"][type="button"].theme,
+input[style="stb"][type="reset"].theme,
+input[style="stb"][type="submit"].theme{
+	border-color:#292929;
+	background-color:#292929;
+	color:#fff;
+}
+/*Label custom style*/
+label[style="stb"]{
+	width:auto;
+	height:auto;
+	max-width:100px;
+	padding:0.1em;
+	margin:0 auto 0.1em auto;
+	display:inherit;
+}
+label[style="stb"].ui{
+	font-family:'Pacifico', cursive;
+	color:#fff;
+	text-align:center;
+	background-color:#292929;
+}
