@@ -4,16 +4,19 @@
 * Font: Copywright Google Fonts - https://www.google.com/fonts
 * Project Name: See Through ButtonShadow
 * Version: 0.0.1
-* NOTE: Buttons only support IE10 and up
+*
+* NOTE: Buttons only support IE10 and up, IE(Especially IE11) struggles with attribute equality,
+* hence why commented out.
 */
 body{
 	background-color:#56ABD6;
+	padding:0.5em;
 }
-.stb,
+.stb/*,
 button[style="stb"],
 input[style="stb"][type="button"],
 input[style="stb"][type="reset"],
-input[style="stb"][type="submit"]{
+input[style="stb"][type="submit"]*/{
 	width:auto;
 	height:auto;
 	padding:0.5em;
@@ -22,54 +25,65 @@ input[style="stb"][type="submit"]{
 	max-width:200px;
 	margin-right:auto;
 	margin-left:auto;
+	-webkit-appearance:none;
+	filter:none !important;
+	box-sizing: content-box;
+	-moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 	display:inherit;
 }
-.stb[text]:before,
+.stb.ui:before/*
 button[style="stb"][text]:before,
 input[style="stb"][value][type="button"],
 input[style="stb"][value][type="reset"],
-input[style="stb"][value][type="submit"]{
+input[style="stb"][value][type="submit"]*/{
 	content: attr(text);
 	font-family:'Pacifico', cursive;
+	-webkit-font-smoothing: antialiased !important;
 }
-.stb[text],
+input.stb.ui{
+	content: attr(text);
+	font-family:'Pacifico', cursive;
+	-webkit-font-smoothing: antialiased !important;
+}
+.stb.ui/*
 button[style="stb"][text],
 input[style="stb"][value][type="button"],
 input[style="stb"][value][type="reset"],
-input[style="stb"][value][type="submit"]
-{
+input[style="stb"][value][type="submit"]*/{
 	-webkit-transition:border-color 0.1s ease, background-color 0.1s ease;
 	-moz-transition:border-color 0.1s ease, background-color 0.1s ease;
 	-o-transition:border-color 0.1s ease, background-color 0.1s ease;
 	transition:border-color 0.1s ease, background-color 0.1s ease;
 	border:0.2em solid;
 }
-.stb[text]:hover,
+.stb.ui:hover/*
 button[style="stb"][text]:hover,
 input[style="stb"][value][type="button"]:hover,
 input[style="stb"][value][type="reset"]:hover,
-input[style="stb"][value][type="submit"]:hover{
+input[style="stb"][value][type="submit"]:hover*/{
 	cursor:pointer;
-	background-color:inherit;
+	background-color:#56ABD6/*inherit*/;
 }
-.stb[text]:active,
+.stb.ui:active/*
 button[style="stb"][text]:active,
 input[style="stb"][value][type="button"]:active,
 input[style="stb"][value][type="reset"]:active,
-input[style="stb"][value][type="submit"]:active{
+input[style="stb"][value][type="submit"]:active*/{
 	border-color:#fff;
 }
-.stb.theme,
+.stb.theme/*,
 button[style="stb"].theme,
 input[style="stb"][type="button"].theme,
 input[style="stb"][type="reset"].theme,
-input[style="stb"][type="submit"].theme{
+input[style="stb"][type="submit"].theme*/{
 	border-color:#292929;
 	background-color:#292929;
 	color:#fff;
 }
 /*Label custom style*/
-label[style="stb"]{
+label/*[style="stb"]*/{
 	width:auto;
 	height:auto;
 	max-width:100px;
@@ -77,9 +91,27 @@ label[style="stb"]{
 	margin:0 auto 0.1em auto;
 	display:inherit;
 }
-label[style="stb"].ui{
+label/*[style="stb"]*/.ui{
 	font-family:'Pacifico', cursive;
 	color:#fff;
 	text-align:center;
 	background-color:#292929;
+}
+/*Query for mobile*/
+@media all and (max-width : 50em){
+	.stb{
+		width: 100%;
+		max-width: none;
+		padding: 0.5em 0 0.5em 0;
+		margin: 0 0 0 0;
+	}
+	button.stb,input.stb{
+		padding-right: 0.05em;
+	}
+	label{
+		width: 100%;
+		border: 0.1em solid #292929;
+		max-width: none;
+		margin: 0 0 0.1em 0;
+	}
 }
